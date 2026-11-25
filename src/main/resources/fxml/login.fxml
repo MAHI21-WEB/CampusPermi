@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.campus.permission.controller.LoginController"
+            styleClass="root-container">
+    <center>
+        <VBox alignment="CENTER_LEFT" spacing="14.0" maxWidth="420.0" maxHeight="420.0" styleClass="card-container">
+            <padding>
+                <Insets top="34.0" right="34.0" bottom="34.0" left="34.0"/>
+            </padding>
+
+            <VBox alignment="CENTER" spacing="4.0" maxWidth="Infinity">
+                <Label text="Campus Permission Management System" styleClass="app-title" wrapText="true"/>
+                <Label text="Thapar Institute of Engineering &amp; Technology" styleClass="app-subtitle" wrapText="true"/>
+            </VBox>
+
+            <Label text="Sign in with your institutional account" styleClass="muted-text"/>
+
+            <VBox spacing="6.0">
+                <Label text="Email" styleClass="field-label"/>
+                <TextField fx:id="emailField" promptText="e.g. aarav.ccs@thapar.edu" styleClass="text-input"/>
+            </VBox>
+
+            <VBox spacing="6.0">
+                <Label text="Password" styleClass="field-label"/>
+                <PasswordField fx:id="passwordField" promptText="Enter your password"
+                               onAction="#handleLogin" styleClass="text-input"/>
+            </VBox>
+
+            <Label fx:id="errorLabel" styleClass="error-banner" wrapText="true" maxWidth="Infinity"/>
+
+            <Button fx:id="loginButton" text="Sign In" onAction="#handleLogin"
+                    maxWidth="Infinity" styleClass="primary-button"/>
+        </VBox>
+    </center>
+</BorderPane>
